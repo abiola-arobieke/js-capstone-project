@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  font-family: 'Poppins', sans-serif;
   background-color: #fff;
   box-sizing: border-box;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border: 0;
   margin: 0;
 }
@@ -15,16 +20,31 @@ h4 {
   margin-block-end: 0;
 }
 
-.card  {
-    width: 400px;
+.container {
+  margin: 0 10%;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 70px 18%;
+}
+
+.card {
+  width: 100%;
+}
+
 .card-img {
   width: 100%;
   height: auto;
 }
 
 .comment-btn {
-    width: 100%;
+  width: 100%;
+  font-size: 18px;
+  border: 2px solid #000;
+  margin: 20px 0;
+  box-shadow: 5px 5px 2px #000;
 }
 
 /* utility classes */
@@ -33,37 +53,37 @@ h4 {
 }
 
 .justify-end {
-    justify-content: end;
+  justify-content: end;
 }
 
 .space-btw {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
-.ft-24 {
-  font-size: 24px;
+.ft-20 {
+  font-size: 20px;
 }
 
 .ft-28 {
-    font-size: 28px;
-  }
+  font-size: 28px;
+}
 
 .py-10 {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .capitalize {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .float-right {
-    float: right;
+  float: right;
 }
 
 .b-none {
-    border: none;
+  border: none;
 }
 
-.bg-white{
-    background-color: #fff;
+.bg-white {
+  background-color: #fff;
 }
