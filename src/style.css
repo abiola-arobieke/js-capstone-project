@@ -18,6 +18,7 @@ h3,
 h4 {
   margin-block-start: 0;
   margin-block-end: 0;
+  font-weight: 400;
 }
 
 .container {
@@ -34,22 +35,39 @@ h4 {
   width: 100%;
 }
 
+.card-title {
+  width: 80%;
+  height: 90px;
+  overflow: hidden;
+}
+
+.card-likes {
+  width: 20%;
+}
+
 .card-img {
   width: 100%;
-  height: auto;
+  height: 240px;
 }
 
 .comment-btn {
   width: 100%;
   font-size: 18px;
   border: 2px solid #000;
-  margin: 20px 0;
   box-shadow: 5px 5px 2px #000;
 }
 
 /* utility classes */
 .d-flex {
   display: flex;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .justify-end {
@@ -66,6 +84,10 @@ h4 {
 
 .ft-28 {
   font-size: 28px;
+}
+
+.pt-5 {
+  padding-top: 5px;
 }
 
 .py-10 {
