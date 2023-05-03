@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@700&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -12,6 +13,11 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 h1,
 h2,
 h3,
@@ -23,6 +29,35 @@ h4 {
 
 .container {
   margin: 0 10%;
+}
+
+.logo > a {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  font-weight: bolder;
+  color: #ba1414;
+  padding: 8px 20px;
+  width: 20%;
+  border: 2px solid #ba1414;
+  border-radius: 60%;
+}
+
+.nav {
+  padding: 50px 0;
+  margin-bottom: 80px;
+}
+
+.nav-link {
+  width: 80%;
+  margin-right: 15%;
+}
+
+.nav-link > div {
+  padding-bottom: 2px;
+}
+
+.nav-link > div:hover {
+  font-size: 18px;
 }
 
 .grid {
@@ -62,8 +97,20 @@ h4 {
   display: flex;
 }
 
+.gap-8pc {
+  gap: 8%;
+}
+
+.active {
+  border-bottom: 2px solid #ba1414;
+}
+
 .align-end {
   align-items: end;
+}
+
+.align-center {
+  align-items: center;
 }
 
 .flex-col {
