@@ -2,9 +2,13 @@ import { addLike, getLikes } from './likes.js';
 import { likeUrl } from './endpoint.js';
 
 const createNewElement = async (baseUrl, interUrl, recipeArray, likesArray) => {
+  const totalRecipe = document.getElementById('recipe');
   const grid = document.getElementById('grid');
   const getData = await recipeArray(baseUrl);
   const allLikes = await likesArray(interUrl);
+
+  totalRecipe.innerHTML = `(${getData.length})`;
+  // Remove existing childNodes
   while (grid.hasChildNodes()) {
     grid.removeChild(grid.firstChild);
   }
