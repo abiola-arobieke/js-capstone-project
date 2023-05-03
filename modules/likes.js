@@ -26,3 +26,14 @@ export const getLikes = async (url, id) => {
   const itemLikes = res.find((item) => item.item_id === id);
   return itemLikes ? itemLikes.likes : 0;
 };
+
+export const getAllLikes = async (url) => {
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const res = await response.json();
+  return res;
+};
