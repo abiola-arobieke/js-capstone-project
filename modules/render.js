@@ -1,9 +1,12 @@
+import { addLike, getLikes } from './likes.js';
+import { likeUrl } from './endpoint.js';
+
 const createNewElement = async (url, recipeArray) => {
-  const divElement = document.getElementById('grid');
+  const grid = document.getElementById('grid');
   const getData = await recipeArray(url);
 
-  while (divElement.hasChildNodes()) {
-    divElement.removeChild(divElement.firstChild);
+  while (grid.hasChildNodes()) {
+    grid.removeChild(grid.firstChild);
   }
 
   getData.forEach((recipe) => {
@@ -17,21 +20,36 @@ const createNewElement = async (url, recipeArray) => {
                   </h4>
                 </div>
                 <div class="card-likes d-flex flex-col align-end">
-                    <button class="b-none bg-white" type="button">
-                        <i class="fa fa-heart-o ft-28" aria-hidden="true"></i> 
-                    </button>
-                    <div class="d-flex justify-end pt-5">5 likes</div>
+                    <i id="${recipe.id}" class="fa fa-heart-o ft-28" aria-hidden="true"></i> 
+                    <div class="d-flex justify-end pt-5">0 likes</div>
                 </div>
               </div>   
               <div>
-                  <button class="comment-btn py-10 bg-white capitalize" type="button">Comments</button>
+                  <button id="${recipe.id}" class="comment-btn py-10 bg-white capitalize" type="button">Comments</button>
               </div>
           </div>
         `;
-    const section = document.createElement('div');
-    section.classList.add('card');
-    section.innerHTML = cardChild;
-    divElement.appendChild(section);
+
+    const divElement = document.createElement('div');
+    divElement.classList.add('card');
+    divElement.innerHTML = cardChild;
+    grid.appendChild(divElement);
+    const likeBtn = document.getElementById(`${recipe.id}`);
+
+    likeBtn.addEventListener('click', async (event) => {
+      const getId = {
+        item_id: Number(event.target.id),
+      };
+      const updateLike = await addLike(likeUrl, JSON.stringify(getId));
+      if (updateLike) {
+        const likesCount = await getLikes(likeUrl, getId.item_id);
+        if (likesCount > 1) {
+          event.target.nextElementSibling.innerHTML = `${likesCount} likes`;
+        } else {
+          event.target.nextElementSibling.innerHTML = `${likesCount} like`;
+        }
+      }
+    });
   });
 };
 
