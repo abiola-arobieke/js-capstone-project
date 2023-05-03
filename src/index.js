@@ -1,8 +1,7 @@
 import './style.css';
 import './index.html';
+import { apiUrl } from '../modules/endpoint.js';
 import createNewElement from '../modules/render.js';
-
-const apiUrl = 'https://api.sampleapis.com/recipes/recipes';
 
 const getAllRecipe = async (url) => {
   const response = await fetch(url, {
