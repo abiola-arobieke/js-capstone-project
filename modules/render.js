@@ -1,15 +1,16 @@
 import { addLike, getLikes } from './likes.js';
 import { likeUrl } from './endpoint.js';
 
-const createNewElement = async (url, recipeArray) => {
+const createNewElement = async (baseUrl, interUrl, recipeArray, likesArray) => {
   const grid = document.getElementById('grid');
-  const getData = await recipeArray(url);
-
+  const getData = await recipeArray(baseUrl);
+  const allLikes = await likesArray(interUrl);
   while (grid.hasChildNodes()) {
     grid.removeChild(grid.firstChild);
   }
 
   getData.forEach((recipe) => {
+    const recipeItem = allLikes.find((item) => item.item_id === recipe.id);
     const cardChild = `
           <img class="card-img" src="${recipe.photoUrl}" alt="recipe.title">
           <div class="card-detail">
@@ -21,7 +22,7 @@ const createNewElement = async (url, recipeArray) => {
                 </div>
                 <div class="card-likes d-flex flex-col align-end">
                     <i id="${recipe.id}" class="fa fa-heart-o ft-28" aria-hidden="true"></i> 
-                    <div class="d-flex justify-end pt-5">0 likes</div>
+                    <div class="d-flex justify-end pt-5"> ${recipeItem ? `${recipeItem.likes} ${recipeItem.likes > 1 ? 'likes' : 'like'}` : `${0} like`}</div>
                 </div>
               </div>   
               <div>
