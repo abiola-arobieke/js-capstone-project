@@ -88,7 +88,7 @@ h4 {
 .comment-btn {
   width: 100%;
   font-size: 18px;
-  border: 2px solid #000;
+  /*border: 2px solid #000; */
   box-shadow: 5px 5px 2px #000;
 }
 
@@ -162,3 +162,98 @@ h4 {
 .bg-white {
   background-color: #fff;
 }
+
+/*.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 12px;
+  top: 0;
+  z-index: 1001;
+  height: 100%;
+  background-color: #fff;
+   /* background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4); 
+  overflow: scroll;
+}
+
+.main-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 9rem;
+  width: 70%;
+  height: auto;
+  background: green;
+}
+
+.modal-head {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+} 
+
+.modal-container {
+  width: 20rem;
+  height: 5rem; 
+}
+
+.meal-img {
+ display: flex;
+ align-items: center;
+ width: 100%;
+ height: 25rem;
+}
+
+.close-Hambuger {
+  display: flex;
+  justify-content: flex-start;
+  width: 5rem;
+  height: 5rem;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  float: left; 
+}
+
+.comments-section {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+#userName,
+#textarea {
+  display: flex;
+  padding: 0.5rem;
+  width: 100%;
+  border: 0.2rem solid #000;
+}
+
+#comment-btn {
+  width: 50%;
+  font-size: 1.5rem;
+  margin: 20px 0;
+  box-shadow: 5px 5px 2px #000;
+  cursor: pointer;
+} */
