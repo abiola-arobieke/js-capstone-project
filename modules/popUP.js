@@ -1,10 +1,20 @@
-import  { commentUrl } from "../modules/endpoint.js";
+import  { commentUrl } from "./endpoint.js";
 
-const createPopup = (recipeId) => {
+export const createPopup = (recipeId, recipe) => {
   // Create popup window
   const popup = document.createElement('div');
   popup.classList.add('popup');
   const popupContent = `
+
+  <div class="main-modal">
+  <div class="modal-head">
+    <div class="modal-container">
+
+    <img class="card-img" src="${recipe.photoUrl}" alt="recipe.title">
+     
+    </div>
+    <span class="close-Hambuger close-btn">&times;</span>
+  </div>
     <h2>Add Comment</h2>
     <form id="comment-form">
       <div>
@@ -16,8 +26,9 @@ const createPopup = (recipeId) => {
         <textarea id="comment-input" name="comment" required></textarea>
       </div>
       <button type="submit">Submit</button>
-      <button type="button" class="close-btn">Close</button>
+  
     </form>
+    </div>
   `;
   popup.innerHTML = popupContent;
   document.body.appendChild(popup);
@@ -69,10 +80,16 @@ const createPopup = (recipeId) => {
 // Add event listeners to comment buttons
 const commentBtns = document.querySelectorAll('.comment-btn');
 commentBtns.forEach((recipe) => {
-  btn.addEventListener('click', () => {
+  
+  btn.addEventListener('click', async (event) => {
+    event.preventDefault();
     const recipeId = recipe.id;
     createPopup(recipeId);
+    console.log(recipe)
   });
 });
 
 
+
+
+export default createPopup;

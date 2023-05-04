@@ -1,8 +1,12 @@
 import './style.css';
 import './index.html';
-import { apiUrl, likeUrl } from '../modules/endpoint.js';
+import { apiUrl, likeUrl, commentUrl } from '../modules/endpoint.js';
 import createNewElement from '../modules/render.js';
 import { getAllLikes } from '../modules/likes.js';
+import {createPopup} from '../modules/popUp';
+
+
+createPopup();
 
 
 const getAllRecipe = async (url) => {
@@ -17,4 +21,5 @@ const getAllRecipe = async (url) => {
 };
 
 createNewElement(apiUrl, likeUrl, getAllRecipe, getAllLikes );
+
 
