@@ -71,8 +71,8 @@ const createNewElement = async (baseUrl, interUrl, recipeArray, likesArray) => {
                                 <div class="w-100c">
                                     <h4 class="form-text-header py-10 text-center">Add a comment</h4>
                                     <form  action="form" class="form d-flex flex-col gap-10">
-                                    <input class="py-10 capitalize" type="text" id="userName" placeholder="Your name" name="user">
-                                    <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Your insights"></textarea>
+                                    <input class="py-10 capitalize ft-16" type="text" id="userName" placeholder="Your name" name="user">
+                                    <textarea class="ft-16" name="textarea" id="textarea" cols="30" rows="10" placeholder="Your insights"></textarea>
                                     <button class="py-10 submit-comment" type="button" id="${recipe.id} ${'comment-btn'}" title="${recipe.id}">Comment</button>
                                     </form>
                                 </div>
@@ -94,6 +94,7 @@ const createNewElement = async (baseUrl, interUrl, recipeArray, likesArray) => {
       };
       const updateLike = await addLike(likeUrl, JSON.stringify(getId));
       if (updateLike) {
+        event.target.classList.add('heart');
         const likesCount = await getLikes(likeUrl, getId.item_id);
         if (likesCount > 1) {
           event.target.nextElementSibling.innerHTML = `${likesCount} likes`;
