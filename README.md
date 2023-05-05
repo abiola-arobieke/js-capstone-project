@@ -101,6 +101,14 @@ Open your code editor terminal and run the following command
 - Linkedin: [@abiola-arobieke](https://linkedin.com/in/abiola-arobieke)
 - Twitter: [@abiola_arobieke](https://twitter.com/abiola_arobieke)
 
+👤 **Adeyemi Olusola**
+
+
+- GitHub: [@emarkees](https://github.com/emarkees)
+- Linkedin: [@Adeyemi Olusola](https://www.linkedin.com/in/adeyemi-olusola-1a3ab1141/)
+- Twitter: [@McEmarkees](https://twitter.com/McEmarkees)
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
