@@ -1,8 +1,8 @@
 import './style.css';
 import './index.html';
+import { apiUrl, likeUrl } from '../modules/endpoint.js';
 import createNewElement from '../modules/render.js';
-
-const apiUrl = 'https://api.sampleapis.com/recipes/recipes';
+import { getAllLikes } from '../modules/likes.js';
 
 const getAllRecipe = async (url) => {
   const response = await fetch(url, {
@@ -15,4 +15,4 @@ const getAllRecipe = async (url) => {
   return res;
 };
 
-createNewElement(apiUrl, getAllRecipe);
+createNewElement(apiUrl, likeUrl, getAllRecipe, getAllLikes);
