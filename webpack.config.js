@@ -24,6 +24,28 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          sources: {
+            list: [
+              // All default supported tags and attributes
+              '...',
+              {
+                tag: 'img',
+                attribute: 'data-src',
+                type: 'src',
+              },
+              {
+                tag: 'img',
+                attribute: 'data-srcset',
+                type: 'srcset',
+              },
+            ],
+          },
+        },
+      },
     ],
   },
 };
