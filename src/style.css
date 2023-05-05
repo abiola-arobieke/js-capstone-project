@@ -66,6 +66,11 @@ h4 {
   gap: 70px 18%;
 }
 
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .card {
   width: 100%;
 }
@@ -88,7 +93,6 @@ h4 {
 .comment-btn {
   width: 100%;
   font-size: 18px;
-  border: 2px solid #000;
   box-shadow: 5px 5px 2px #000;
 }
 
@@ -96,6 +100,13 @@ h4 {
   border-top: 1px solid #000;
   padding: 90px 5%;
   margin-top: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 1em;
+  padding-inline-start: 40px;
 }
 
 /* utility classes */
@@ -147,6 +158,10 @@ h4 {
   padding: 10px 0;
 }
 
+.py-20 {
+  padding: 20px 0;
+}
+
 .capitalize {
   text-transform: capitalize;
 }
@@ -161,4 +176,86 @@ h4 {
 
 .bg-white {
   background-color: #fff;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w-100c {
+  width: 100%;
+}
+
+.w-65c {
+  width: 50%;
+}
+
+.w-35c {
+  width: 35%;
+}
+
+.gap-10 {
+  gap: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  border: 2px solid #000;
+  width: 90%;
+  height: 95%;
+  overflow-y: auto;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.modal-container {
+  padding: 0 25%;
+}
+
+.modal-info {
+  padding: 20px 0;
+  margin: 0 100px;
+}
+
+.close {
+  font-size: 3rem;
+  float: right;
+}
+
+.form {
+  width: 50%;
+  padding-left: 40px;
+}
+
+#comment-btn {
+  width: 50%;
+  font-size: 18px;
+  box-shadow: 5px 5px 2px #000;
+  cursor: pointer;
+}
+
+.submit-comment {
+  width: 50%;
+  font-size: 18px;
+  box-shadow: 5px 5px 2px #000;
+  cursor: pointer;
+}
+
+.pop-image {
+  height: 350px;
 }

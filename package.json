@@ -32,7 +32,8 @@
     "webpack-dev-server": "^4.13.2"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4"
   },
   "main": "webpack.config.js",
   "repository": {
