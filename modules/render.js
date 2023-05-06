@@ -30,12 +30,12 @@ const createNewElement = async (baseUrl, interUrl, recipeArray, likesArray) => {
                   </h4>
                 </div>
                 <div class="card-likes d-flex flex-col align-end">
-                    <i id="${recipe.id}" class="fa fa-heart-o ft-28" aria-hidden="true"></i> 
+                    <i id="${recipe.id}" class="fa fa-heart-o ft-28 pointer" aria-hidden="true"></i> 
                     <div class="d-flex justify-end pt-5"> ${recipeItem ? `${recipeItem.likes} ${recipeItem.likes > 1 ? 'likes' : 'like'}` : `${0} like`}</div>
                 </div>
               </div>   
               <div>
-                  <button name="${recipe.id}" class="comment-btn py-10 bg-white capitalize" type="button">Comments</button>
+                  <button name="${recipe.id}" class="comment-btn py-10 bg-white pointer capitalize" type="button">Comments</button>
               </div>
           </div>
           <div class="modal hide">
@@ -73,7 +73,7 @@ const createNewElement = async (baseUrl, interUrl, recipeArray, likesArray) => {
                                     <form  action="form" class="form d-flex flex-col gap-10">
                                     <input class="py-10 capitalize ft-16" type="text" id="userName" placeholder="Your name" name="user">
                                     <textarea class="ft-16" name="textarea" id="textarea" cols="30" rows="10" placeholder="Your insights"></textarea>
-                                    <button class="py-10 submit-comment" type="button" id="${recipe.id} ${'comment-btn'}" title="${recipe.id}">Comment</button>
+                                    <button class="py-10 submit-comment pointer btn-submit" type="button" id="${recipe.id} ${'comment-btn'}" title="${recipe.id}">Comment</button>
                                     </form>
                                 </div>
                             </div>
@@ -137,17 +137,34 @@ const createNewElement = async (baseUrl, interUrl, recipeArray, likesArray) => {
     });
 
     submitComment.addEventListener('click', async (e) => {
-      let user = e.target.previousElementSibling.previousElementSibling.value;
-      let userComment = e.target.previousElementSibling.value;
+      const user = e.target.previousElementSibling.previousElementSibling.value;
+      const userComment = e.target.previousElementSibling.value;
       if (user && userComment) {
         const payload = {
           item_id: Number(e.target.title),
           username: user,
           comment: userComment,
         };
-        user = '';
-        userComment = '';
+        e.target.previousElementSibling.previousElementSibling.value = '';
+        e.target.previousElementSibling.value = '';
         await addComment(commentUrl, JSON.stringify(payload));
+        // Update comment list
+        const recipeComment = await getComment(newUrl);
+        const totalComment = e.target.parentElement.parentElement
+          .parentElement.children.item(1).firstElementChild;
+        const ulTagComment = e.target.parentElement.parentElement
+          .parentElement.children.item(1).firstElementChild.nextElementSibling;
+        // Remove existing li tag
+        while (ulTagComment.hasChildNodes()) {
+          ulTagComment.removeChild(ulTagComment.firstChild);
+        }
+        totalComment.innerHTML = recipeComment.length > 0 ? `Comments(${recipeComment.length})` : 'Comment(0)';
+        // Display comment for each recipe
+        recipeComment.forEach((item) => {
+          const liTag = document.createElement('li');
+          liTag.innerHTML = `${moment(`${item.creation_date}`).locale('en-gb').format('L')} ${item.username}${':'} ${item.comment}`;
+          ulTagComment.appendChild(liTag);
+        });
       }
     });
   });
