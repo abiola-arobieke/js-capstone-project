@@ -1,4 +1,4 @@
-import { commentUrl } from './endpoint';
+import { commentUrl } from './endpoint.js';
 
 const getCommenturl = `${commentUrl}?item_id=`;
 const id = 1;

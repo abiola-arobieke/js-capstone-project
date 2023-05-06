@@ -21,5 +21,9 @@ export const getComment = async (url) => {
     },
   });
   const res = await response.json();
+
+  if (response.status === 400) {
+    return [];
+  }
   return res;
 };
