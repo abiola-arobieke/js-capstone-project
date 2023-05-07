@@ -92,7 +92,7 @@ Open your code editor terminal and run the following command
     npm start
 ```
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Abiola Arobieke**
 
