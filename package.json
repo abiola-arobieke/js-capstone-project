@@ -1,14 +1,20 @@
 {
   "name": "webpack",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abiola-arobieke/js-capstone-project.git"
+  },
   "description": "<a name=\"readme-top\"></a>",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
-    "build": "webpack",
-    "jest": "jest"
+    "build": "webpack --mode=development",
+    "jest": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +28,7 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.27.5",
+    "gh-pages": "^6.0.0",
     "hint": "^7.1.8",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
@@ -40,10 +47,6 @@
     "moment": "^2.29.4"
   },
   "main": "webpack.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/abiola-arobieke/js-capstone-project.git"
-  },
   "bugs": {
     "url": "https://github.com/abiola-arobieke/js-capstone-project/issues"
   },
